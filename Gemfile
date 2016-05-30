@@ -5,10 +5,6 @@ ruby '2.2.4'
 gem 'rails', '4.2.5.1'
 # Use sqlite3 as the database for Active Record
 
-gem 'puma'
-gem 'pg'
-gem 'rails-reveal-js'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -37,7 +33,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-	gem 'pg'
+  gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 end
@@ -51,6 +47,7 @@ group :development do
 end
 
 group :production do
+	gem 'puma'
 	gem 'pg'
 	gem 'rails_12factor'
 end
