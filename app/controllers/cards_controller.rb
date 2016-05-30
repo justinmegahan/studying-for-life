@@ -36,6 +36,13 @@ class CardsController < ApplicationController
 		@card = Card.find(params[:id])
 	end
 
+	def destroy
+		@card = Card.find(params[:id])
+		@card.destroy
+		flash[:notice] = "Article deleted"
+		redirect_to cards_path
+	end
+
 	private
 	def card_params
 		params.require(:card).permit(:question, :answer, :notes)
