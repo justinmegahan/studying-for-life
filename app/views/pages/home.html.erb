@@ -1,3 +1,47 @@
 <h1>Home</h1>
 
-<%= link_to "Cards", cards_path %>
+		<div class="reveal">
+
+			<div class="slides">
+
+				<section>
+					<h2>studying for life</h2>
+					<h4>Press &#8680; or swipe left to start</h4>
+				</section>
+
+				<section>
+					<section>
+					<h3>For answers press &#8681; or swipe down</h3>
+					</section>
+					<section>
+					<h4>Yep, just like that.</h4>
+					<p>Alright, get studying ...</p>
+					<p>&#8680;</p>
+					</section>
+				</section>
+
+				<% @cards.each do |card| %>
+					<section>
+						<section>
+						<h3><%= card.question %></h3>
+						</section>
+						<section>
+							<h4><%= card.answer %></h4>
+							<p><%= card.notes %></p>
+						</section>
+					</section>
+				<% end %>
+
+			</div>
+
+		</div>
+
+
+		<script>
+
+			Reveal.initialize({
+				history: true,
+				transition: 'linear'
+			});
+
+		</script>

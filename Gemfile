@@ -5,7 +5,7 @@ ruby '2.2.4'
 gem 'rails', '4.2.5.1'
 # Use sqlite3 as the database for Active Record
 
-gem 'puma'
+gem 'rails-reveal-js', '~> 3.3', require: 'reveal'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -49,6 +49,7 @@ group :development do
 end
 
 group :production do
+	gem 'puma'
 	gem 'pg'
 	gem 'rails_12factor'
 end
