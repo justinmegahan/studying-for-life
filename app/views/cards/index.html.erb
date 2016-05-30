@@ -1,0 +1,13 @@
+<h1>Index</h1>
+<p><%= link_to "Create new card", new_card_path %></p>
+<table>
+	<tr><th>Question</th><th>Show</th><th>Edit</th></tr>
+
+	<% @cards.each do |card| %>
+		<tr>
+			<td><%= card.question %></td>
+			<td><%= link_to "Edit", edit_card_path(card) %></td>
+			<td><%= link_to "Show", card_path(card)%></td>
+		</tr>
+	<% end %>
+</table>

@@ -1,0 +1,29 @@
+<h1>Create a card</h1>
+
+<% if @card.errors.any? { |e|  } %>
+<ul>
+	<% @card.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+	<% end %>
+</ul>
+<% end %>
+
+<%= form_for @card do |f| %>
+	<p> 
+		<%= f.label :question %><br>
+		<%= f.text_area :question %>
+	</p>
+	<p> 
+		<%= f.label :answer %><br>
+		<%= f.text_area :answer %>
+	</p>
+	<p> 
+		<%= f.label :notes %><br>
+		<%= f.text_area :notes %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>
+
+<%= link_to "Back to cards", cards_path %>
